@@ -1,7 +1,7 @@
 # CRUD API Development
 
 ## Book Management System
-Developed using Laravel with MySQL for handling database.
+Developed using Laravel 10.32.1 with MySQL Workbench for handling database.
 
 ## API Endpoints
 POST /books: accessible through the create post form on the index page OR through the create link in the navbar. <br>
