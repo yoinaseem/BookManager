@@ -20,6 +20,13 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'publicationYear' => 'required|integer',
+            'genre' => 'required',
+
+        ]);
         Book::create($request->all());
         return redirect()->route('books.index')->with('success','Book creation successful.');
 
@@ -40,6 +47,12 @@ class BookController extends Controller
 
     public function update(Request $request, Book $book)
     {
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'publicationYear' => 'required|integer',
+            'genre' => 'required',
+            ]);
         $book = Book::find($book->id);
         $book->update($request->all());
         return redirect()->route('books.index')
